@@ -23,41 +23,41 @@ Instruções:
 # API:
 
 ## Models:
-    ```json
-    Artigo: {
-        id: long,
-        titulo: String,
-        resumo: String,
-        publicado: bool
-    }
-    ```
+```json
+Artigo: {
+    id: long,
+    titulo: String,
+    resumo: String,
+    publicado: bool
+}
+```
 
 ## Rotas:
-    ### Cadastrar Artigo
-    ##### Request
-    `POST /api/artigos` 
-    body {
-        titulo, resumo
-    }
-    ##### Response
-        Artigo
-        
-    ### Listar todos os Artigos
-    ##### Request
-    `GET /api/artigos` 
-    ##### Response
-        Artigo[]
+### Cadastrar Artigo
+##### Request
+`POST /api/artigos` 
+body {
+    titulo, resumo
+}
+##### Response
+    Artigo
+    
+### Listar todos os Artigos
+##### Request
+`GET /api/artigos` 
+##### Response
+    Artigo[]
 
-    ### Buscar artigo por Id
-    ##### Request
-    `GET /api/artigos/:id` 
-    ##### Response
-        Artigo
+### Buscar artigo por Id
+##### Request
+`GET /api/artigos/:id` 
+##### Response
+    Artigo
 
-    ### Remover artigo
-    ##### Request
-    `DEL /api/artigos/:id` 
+### Remover artigo
+##### Request
+`DEL /api/artigos/:id` 
 
-    ### Remover todos os artigos
-    ##### Request
-    `DEL /api/artigos` 
+### Remover todos os artigos
+##### Request
+`DEL /api/artigos` 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Editora</title>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    </head>
+<body>
+	<section class="section">
+		<div class="container has-text-centered">
+			<nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
+				<a class="button login is-primary" th:href="@{editora}">Listar</a>
+				<a class="button login is-primary" th:href="@{editora/add}">Adicionar</a>
+			</nav>		  
+		</div>
+
+		<div style="display: flex; justify-content: center;">
+			<ul style="width: 300px; text-align: center; display: flex; flex-direction: column;" >
+				<a th:href="@{editora/edit/(id=${artigo.id})}" th:each="artigo : ${artigos}" >
+					<li 
+						style="padding: 6px 12px; background-color: #ccc; margin: 6px 0; border: 1px solid #ccc" 
+						th:text="${artigo.titulo}"
+						th:id="'artigo-'+${artigo.titulo}"
+					>
+					</li>
+				</a>
+			</ul>
+		</div>
+
+		<div class="container has-text-centered">
+			<a class="button login is-primary" style="background-color: #e33; color: white" th:href="@{editora/remover}">Excluir todos</a>
+		</div>
+
+		 
+	</section>
+
+
+
+</body>
+</html>
+
+        

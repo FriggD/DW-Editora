@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Editora</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+</head>
+
+<body>
+	<section class="section">
+
+		<div class="container has-text-centered">
+			<nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
+				<a class="button login is-primary" th:href="@{/editora}">Listar</a>
+				<a class="button login is-primary" th:href="@{/editora/add}">Adicionar</a>
+			</nav>		  
+		</div>
+
+		<div class="container has-text-centered" style="padding: 2em">
+			<h2>
+				<strong>Editando artigo</strong>	
+			</h2><br>
+			<div>
+				<form th:action="@{/editora/atualizar}" method="post">
+					<input type="hidden" class="form-control" id="id" name="id" th:value="${artigo.id}">
+
+					<div class="form-group">
+						<label for="titulo">
+							<strong>Título</strong>
+						</label>
+						<br>
+						<input type="text" class="form-control" id="titulo" required="" name="titulo" th:value="${artigo.titulo}">
+					</div>
+					<div class="form-group" style="margin-top: 2em;">
+						<label for="resumo">
+							<strong>Resumo</strong>
+						</label>
+						<br>
+						<input type="text" class="form-control" id="resumo" required="" name="resumo" th:value="${artigo.resumo}">
+					</div>
+					<p></p>
+					<button type="submit">Salvar</button>
+				</form>
+				
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
